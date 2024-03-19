@@ -1,12 +1,12 @@
 import React, { useEffect, useImperativeHandle, useRef, useState } from 'react';
-import './index.css';
+import './index.scss';
 
 interface CalendarProps {
   value?: Date
   onChange?: (event: Date) => void
 }
 
-interface CalendarRef {
+export interface CalendarRef {
   getDate: () => Date
   setDate: (date: Date) => void
 }
@@ -98,7 +98,7 @@ const InternalCalendar: React.ForwardRefRenderFunction<CalendarRef, CalendarProp
   };
 
   return (
-    <div className="calendar">
+    <div className="mini-calendar">
       <div className="header">
         <button onClick={handlePrevMonth}>&lt;</button>
         <div>{date.getFullYear()}年{monthNames[date.getMonth()]}</div>
@@ -118,26 +118,4 @@ const InternalCalendar: React.ForwardRefRenderFunction<CalendarRef, CalendarProp
   );
 }
 
-const Calendar = React.forwardRef(InternalCalendar)
-
-function Test() {
-  const calendarRef = useRef<CalendarRef>(null)
-
-  useEffect(() => {
-    setTimeout(() => {
-      calendarRef.current?.setDate(new Date('2022-3-18'));
-    }, 3000)
-
-  }, [])
-
-  return (
-    <div>
-      <Calendar value={new Date('2024-3-16')} ></Calendar>
-      <Calendar ref={calendarRef} value={new Date('2023-3-16')} onChange={(date: Date) => {
-        calendarRef.current?.setDate(date)
-      }}></Calendar>
-    </div >
-  );
-}
-
-export default Test;
+export default InternalCalendar;
