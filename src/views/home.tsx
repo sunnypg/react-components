@@ -59,6 +59,8 @@ const Home: React.FC = () => {
             margin: '24px 16px',
             padding: 24,
             minHeight: 280,
+            maxHeight: 'calc(100vh - 160px)',
+            overflow: 'auto',
             background: colorBgContainer,
             borderRadius: borderRadiusLG,
           }}

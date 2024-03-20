@@ -1,5 +1,6 @@
 import { lazy } from 'react'
 import { RouteObject } from 'react-router-dom'
+import Test from '../views/test/test'
 
 const Home = lazy(() => import('../views/home'))
 const MiniCalendar = lazy(() => import('../views/mini-calendar'))
@@ -17,6 +18,10 @@ const routes: RouteObject[] = [
       {
         path: '/calendar',
         element: <Calendar />,
+      },
+      {
+        path: '/test',
+        element: <Test />,
       }
     ]
   }

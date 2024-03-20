@@ -1,4 +1,4 @@
-import { CalendarOutlined } from '@ant-design/icons';
+import { ApiOutlined, CalendarOutlined } from '@ant-design/icons';
 import { Menu } from 'antd';
 import { memo, useCallback } from 'react';
 import { useLocation, useNavigate } from 'react-router-dom';
@@ -13,6 +13,11 @@ const items = [
     key: '/calendar',
     icon: <CalendarOutlined />,
     label: '日历',
+  },
+  {
+    key: '/test',
+    icon: <ApiOutlined />,
+    label: '单元测试',
   },
 ]
 
