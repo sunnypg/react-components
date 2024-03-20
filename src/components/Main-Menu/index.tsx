@@ -1,24 +1,55 @@
-import { ApiOutlined, CalendarOutlined } from '@ant-design/icons';
-import { Menu } from 'antd';
+import { AntDesignOutlined, ApiOutlined, AppstoreAddOutlined, BgColorsOutlined, BugOutlined, CalendarOutlined, InsuranceOutlined } from '@ant-design/icons';
+import { Menu, MenuProps } from 'antd';
 import { memo, useCallback } from 'react';
 import { useLocation, useNavigate } from 'react-router-dom';
 
-const items = [
+type MenuItem = Required<MenuProps>['items'][number];
+
+const items: MenuItem[] = [
   {
-    key: '/mini-calendar',
-    icon: <CalendarOutlined />,
-    label: '迷你日历',
+    key: '/components',
+    icon: <AppstoreAddOutlined />,
+    label: '自定义组件',
+    children: [
+      {
+        key: '/mini-calendar',
+        icon: <CalendarOutlined />,
+        label: '迷你日历',
+      },
+      {
+        key: '/calendar',
+        icon: <CalendarOutlined />,
+        label: '日历',
+      },
+      {
+        key: '/color-picker',
+        icon: <BgColorsOutlined />,
+        label: '颜色选择器',
+      },
+      {
+        key: '/icon',
+        icon: <AntDesignOutlined />,
+        label: '图标',
+      },
+    ]
   },
   {
-    key: '/calendar',
-    icon: <CalendarOutlined />,
-    label: '日历',
-  },
-  {
-    key: '/test',
-    icon: <ApiOutlined />,
-    label: '单元测试',
-  },
+    key: '/security',
+    icon: <InsuranceOutlined />,
+    label: '安全相关',
+    children: [
+      {
+        key: '/test',
+        icon: <ApiOutlined />,
+        label: '单元测试',
+      },
+      {
+        key: '/error-log',
+        icon: <BugOutlined />,
+        label: '错误日志',
+      }
+    ]
+  }
 ]
 
 const MainMenu: React.FC = memo(() => {

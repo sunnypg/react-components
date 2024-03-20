@@ -5,6 +5,9 @@ import Test from '../views/test/test'
 const Home = lazy(() => import('../views/home'))
 const MiniCalendar = lazy(() => import('../views/mini-calendar'))
 const Calendar = lazy(() => import('../views/calendar'))
+const ErrorLog = lazy(() => import('../views/errorLog'))
+const ColorPicker = lazy(() => import('../views/colorPicker'))
+const Icon = lazy(() => import('../views/icon'))
 
 const routes: RouteObject[] = [
   {
@@ -22,6 +25,19 @@ const routes: RouteObject[] = [
       {
         path: '/test',
         element: <Test />,
+      },
+      {
+        path: '/error-log',
+        element: <ErrorLog />,
+      }
+      ,
+      {
+        path: '/color-picker',
+        element: <ColorPicker />,
+      },
+      {
+        path: '/icon',
+        element: <Icon />,
       }
     ]
   }
