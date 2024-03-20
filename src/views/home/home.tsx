@@ -1,11 +1,11 @@
 import React, { useState } from 'react';
-import { MenuFoldOutlined, MenuUnfoldOutlined, UserOutlined } from '@ant-design/icons';
-import { Layout, Button, theme, Avatar } from 'antd';
-import logo from '../assets/image/logo.svg'
+import { Layout, theme } from 'antd';
+import logo from '../../assets/image/logo.svg'
 import { Outlet } from 'react-router-dom'
-import MainMenu from '../components/Main-Menu';
+import MainMenu from '../../components/Main-Menu';
+import HomeHeader from './cps/Header';
 
-const { Header, Sider, Content, Footer } = Layout;
+const { Sider, Content, Footer } = Layout;
 
 const Home: React.FC = () => {
   const [collapsed, setCollapsed] = useState(false);
@@ -34,26 +34,7 @@ const Home: React.FC = () => {
         <MainMenu></MainMenu>
       </Sider>
       <Layout>
-        <Header style={{ padding: 0, background: colorBgContainer, display: 'flex', justifyContent: 'space-between' }}>
-          <Button
-            type="text"
-            icon={collapsed ? <MenuUnfoldOutlined /> : <MenuFoldOutlined />}
-            onClick={() => setCollapsed(!collapsed)}
-            style={{
-              fontSize: '16px',
-              width: 64,
-              height: 64,
-            }}
-          />
-          <div style={{ cursor: 'pointer', marginRight: '25px' }}>
-            <Avatar
-              size={36}
-              icon={<UserOutlined />}
-              src="https://upload.jianshu.io/users/upload_avatars/1102036/c3628b478f06.jpeg"
-            />
-            <span style={{ marginLeft: '5px' }}>菠萝不吹雪</span>
-          </div>
-        </Header>
+        <HomeHeader setCollapsed={setCollapsed} collapsed={collapsed}></HomeHeader>
         <Content
           style={{
             margin: '24px 16px',

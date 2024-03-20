@@ -2,7 +2,7 @@ import { lazy } from 'react'
 import { RouteObject } from 'react-router-dom'
 import Test from '../views/test/test'
 
-const Home = lazy(() => import('../views/home'))
+const Home = lazy(() => import('../views/home/home'))
 const MiniCalendar = lazy(() => import('../views/mini-calendar'))
 const Calendar = lazy(() => import('../views/calendar'))
 const ErrorLog = lazy(() => import('../views/errorLog'))
