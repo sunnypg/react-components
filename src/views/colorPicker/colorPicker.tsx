@@ -1,4 +1,4 @@
-import ColorPicker from "../components/ColorPicker"
+import ColorPicker from "../../components/ColorPicker"
 
 function ColorPickerView() {
   return (

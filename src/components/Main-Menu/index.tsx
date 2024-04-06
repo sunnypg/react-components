@@ -1,4 +1,4 @@
-import { AntDesignOutlined, ApiOutlined, AppstoreAddOutlined, BgColorsOutlined, BugOutlined, CalendarOutlined, InsuranceOutlined } from '@ant-design/icons';
+import { AntDesignOutlined, ApiOutlined, AppstoreAddOutlined, BgColorsOutlined, BugOutlined, CalendarOutlined, ColumnWidthOutlined, InsuranceOutlined } from '@ant-design/icons';
 import { Menu, MenuProps } from 'antd';
 import { memo, useCallback } from 'react';
 import { useLocation, useNavigate } from 'react-router-dom';
@@ -30,6 +30,11 @@ const items: MenuItem[] = [
         key: '/icon',
         icon: <AntDesignOutlined />,
         label: '图标',
+      },
+      {
+        key: '/space',
+        icon: <ColumnWidthOutlined />,
+        label: '间距',
       },
     ]
   },

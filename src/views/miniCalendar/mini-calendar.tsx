@@ -1,5 +1,5 @@
 import React, { useEffect, useRef } from "react";
-import InternalCalendar, { CalendarRef } from "../components/Mini-Calendar";
+import InternalCalendar, { CalendarRef } from "../../components/Mini-Calendar";
 const Calendar = React.forwardRef(InternalCalendar)
 
 function MiniCalendarView() {

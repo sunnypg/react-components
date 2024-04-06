@@ -1,5 +1,5 @@
 import dayjs from "dayjs"
-import Calendar from "../components/Calendar"
+import Calendar from "../../components/Calendar"
 
 function CalendarView() {
   return <div>
