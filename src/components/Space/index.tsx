@@ -58,8 +58,8 @@ const Space: React.FC<SpaceProps> = (props) => {
   // 给每一个子元素包一层div
   const nodes = childNodes.map((child: any, i) => {
     const key = child && child.key || `space-item-${i}`;
-    return <>
-      <div className='space-item' key={key}>
+    return <div key={key}>
+      <div className='space-item' >
         {child}
       </div>
       {i < childNodes.length && split && (
@@ -67,7 +67,7 @@ const Space: React.FC<SpaceProps> = (props) => {
           {split}
         </span>
       )}
-    </>
+    </div>
   });
 
   // 计算其他样式（行列间距，是否换行）

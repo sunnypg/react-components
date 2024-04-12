@@ -1,7 +1,9 @@
 import { useEffect, Suspense } from 'react'
-import { useRoutes, useLocation, useNavigate } from 'react-router-dom'
+import { useRoutes, useLocation, useNavigate, RouteObject } from 'react-router-dom'
 import router from './router'
 import { message } from 'antd'
+import KeepAliveLayout from './utils/keepalive'
+import routes from './router'
 
 // 登录页
 function ToLogin() {
@@ -36,11 +38,28 @@ function BeforeRouterEnter() {
   return outlet
 }
 
+function getKeepPaths(routes: RouteObject[]) {
+  const keepPaths: string[] = []
+  routes.forEach((route) => {
+    if (route.path) {
+      keepPaths.push(route.path)
+    }
+    if (route.children) {
+      keepPaths.push(...getKeepPaths(route.children))
+    }
+  })
+  return keepPaths
+}
+
 function App() {
+  const keepPaths = getKeepPaths(routes)
+
   return (
     <div className="app">
       <Suspense fallback={<div>Loading...</div>}>
-        <BeforeRouterEnter></BeforeRouterEnter>
+        <KeepAliveLayout keepPaths={[]}>
+          <BeforeRouterEnter></BeforeRouterEnter>
+        </KeepAliveLayout>
       </Suspense>
     </div>
   )

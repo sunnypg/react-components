@@ -4,6 +4,7 @@ import logo from '../../assets/image/logo.svg'
 import { Outlet } from 'react-router-dom'
 import MainMenu from '../../components/Main-Menu';
 import HomeHeader from './cps/Header';
+import { useKeepOutlet } from '../../utils/keepalive';
 
 const { Sider, Content, Footer } = Layout;
 
@@ -12,6 +13,7 @@ const Home: React.FC = () => {
   const {
     token: { colorBgContainer, borderRadiusLG },
   } = theme.useToken();
+  const element = useKeepOutlet()
 
   return (
     <Layout style={{ minHeight: '100vh' }}>
@@ -46,7 +48,8 @@ const Home: React.FC = () => {
             borderRadius: borderRadiusLG,
           }}
         >
-          <Outlet />
+          {/* <Outlet /> */}
+          {element}
         </Content>
         <Footer style={{ textAlign: 'center', padding: 0, lineHeight: '48px' }}>
           {`React Component Library ©${new Date().getFullYear()}`}
