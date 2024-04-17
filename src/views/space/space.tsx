@@ -1,5 +1,5 @@
 import Space from "../../components/Space"
-import "./index.scss"
+import style from "./index.module.scss"
 import { ConfigProvider } from '../../components/Space/ConfigProvider';
 import { useEffect, useState } from "react";
 
@@ -37,14 +37,14 @@ function SpaceView() {
     <div>
       <ConfigProvider space={{ size: 20 }}>
         <Space direction="horizontal">
-          <div className="box"></div>
-          <div className="box"></div>
-          <div className="box"></div>
+          <div className={style.box}></div>
+          <div className={style.box}></div>
+          <div className={style.box}></div>
         </Space>
         <Space direction="vertical">
-          <div className="box"></div>
-          <div className="box"></div>
-          <div className="box"></div>
+          <div className={style.box}></div>
+          <div className={style.box}></div>
+          <div className={style.box}></div>
         </Space>
       </ConfigProvider>
 

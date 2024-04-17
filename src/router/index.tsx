@@ -9,6 +9,7 @@ const ErrorLog = lazy(() => import('../views/errorLog'))
 const ColorPicker = lazy(() => import('../views/colorPicker/colorPicker'))
 const Icon = lazy(() => import('../views/icon'))
 const Space = lazy(() => import('../views/space/space'))
+const Animation = lazy(() => import('../views/animation'))
 
 const routes: RouteObject[] = [
   {
@@ -43,6 +44,10 @@ const routes: RouteObject[] = [
       {
         path: '/space',
         element: <Space />,
+      },
+      {
+        path: '/animation',
+        element: <Animation />,
       }
     ]
   }

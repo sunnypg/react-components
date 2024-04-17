@@ -1,0 +1,24 @@
+.box {
+	background: blue;
+	height: 100px;
+	margin: 10px;
+}
+
+.smile_container {
+	background: blue;
+	color: white;
+	width: 25%;
+	margin: 50px auto;
+}
+
+.transition_container > div {
+	position: absolute;
+	width: 85vw;
+	height: 75vh;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	color: white;
+	font-weight: 800;
+	font-size: 300px;
+}

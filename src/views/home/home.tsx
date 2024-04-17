@@ -43,7 +43,8 @@ const Home: React.FC = () => {
             padding: 24,
             minHeight: 280,
             maxHeight: 'calc(100vh - 160px)',
-            overflow: 'auto',
+            overflowY: 'auto',
+            overflowX: 'hidden',
             background: colorBgContainer,
             borderRadius: borderRadiusLG,
           }}
