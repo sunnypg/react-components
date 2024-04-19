@@ -1,4 +1,4 @@
-import { AntDesignOutlined, ApiOutlined, AppstoreAddOutlined, BgColorsOutlined, BugOutlined, CalendarOutlined, ColumnWidthOutlined, InsuranceOutlined, LoadingOutlined } from '@ant-design/icons';
+import { AntDesignOutlined, ApiOutlined, AppstoreAddOutlined, BgColorsOutlined, BugOutlined, CalendarOutlined, ColumnWidthOutlined, InsuranceOutlined, LoadingOutlined, BellOutlined } from '@ant-design/icons';
 import { MenuProps } from 'antd';
 
 type MenuItem = Required<MenuProps>['items'][number];
@@ -38,6 +38,11 @@ const menus: MenuItem[] = [
         key: '/animation',
         icon: <LoadingOutlined />,
         label: '动画',
+      },
+      {
+        key: '/message',
+        icon: <BellOutlined />,
+        label: '全局提示',
       },
     ]
   },

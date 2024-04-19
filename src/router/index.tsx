@@ -10,6 +10,7 @@ const ColorPicker = lazy(() => import('../views/colorPicker/colorPicker'))
 const Icon = lazy(() => import('../views/icon'))
 const Space = lazy(() => import('../views/space/space'))
 const Animation = lazy(() => import('../views/animation'))
+const Message = lazy(() => import('../views/message'))
 
 const routes: RouteObject[] = [
   {
@@ -48,6 +49,10 @@ const routes: RouteObject[] = [
       {
         path: '/animation',
         element: <Animation />,
+      },
+      {
+        path: '/message',
+        element: <Message />,
       }
     ]
   }
