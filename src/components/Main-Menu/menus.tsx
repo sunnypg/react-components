@@ -10,6 +10,11 @@ const menus: MenuItem[] = [
     label: '自定义组件',
     children: [
       {
+        key: '/index',
+        icon: <ApiOutlined />,
+        label: '测试',
+      },
+      {
         key: '/mini-calendar',
         icon: <CalendarOutlined />,
         label: '迷你日历',

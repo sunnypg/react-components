@@ -81,8 +81,8 @@ function Spring3() {
   }, [])
 
   return <div>
-    {springs.map(styles => (
-      <animated.div style={styles} className={style.box}></animated.div>
+    {springs.map((styles, i) => (
+      <animated.div style={styles} className={style.box} key={i}></animated.div>
     ))}
   </div>
 }
@@ -104,8 +104,8 @@ function Spring4() {
   }, [])
 
   return <div>
-    {springs.map(styles => (
-      <animated.div style={styles} className={style.box}></animated.div>
+    {springs.map((styles, i) => (
+      <animated.div style={styles} className={style.box} key={i}></animated.div>
     ))}
   </div>
 }
@@ -143,8 +143,8 @@ function Spring5() {
   useChain([api1, api2], [0, 1], 500)
 
   return <div>
-    {springs.map((styles1, index) => (
-      <animated.div style={{ ...styles1, ...springs2[index] }} className={style.box}></animated.div>
+    {springs.map((styles, i) => (
+      <animated.div style={{ ...styles, ...springs2[i] }} className={style.box} key={i}></animated.div>
     ))}
   </div>
 }
@@ -281,26 +281,26 @@ export default function SpringBase() {
     <div style={{ maxHeight: 'calc(100vh - 270px)', overflowY: 'auto', overflowX: 'hidden', position: 'relative' }}>
       <h2>动画API：</h2>
       <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr 1fr 1fr 1fr' }}>
-        <p>
+        <div>
           单个属性变化
           <Spring1></Spring1>
-        </p>
-        <p>
+        </div>
+        <div>
           多个属性变化
           <Spring2></Spring2>
-        </p>
-        <p>
+        </div>
+        <div>
           多个元素多个属性 并行执行动画
           <Spring3></Spring3>
-        </p>
-        <p>
+        </div>
+        <div>
           多个元素多个属性 依次执行动画
           <Spring4></Spring4>
-        </p>
-        <p>
+        </div>
+        <div>
           多个动画 顺序执行
           <Spring5></Spring5>
-        </p>
+        </div>
       </div>
       <h2>😀demo：</h2>
       <Smile></Smile>

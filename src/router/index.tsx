@@ -3,6 +3,7 @@ import { RouteObject } from 'react-router-dom'
 import Test from '../views/test/test'
 
 const Home = lazy(() => import('../views/home/home'))
+const Index = lazy(() => import('../views/index'))
 const MiniCalendar = lazy(() => import('../views/miniCalendar/mini-calendar'))
 const Calendar = lazy(() => import('../views/calendar/calendar'))
 const ErrorLog = lazy(() => import('../views/errorLog'))
@@ -17,6 +18,10 @@ const routes: RouteObject[] = [
     path: '/',
     element: <Home />,
     children: [
+      {
+        path: '/index',
+        element: <Index />,
+      },
       {
         path: '/mini-calendar',
         element: <MiniCalendar />,
